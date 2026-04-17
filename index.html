@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Harry Wylderose</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #0a0a0a;
+    color: #e8e0d0;
+    font-family: Georgia, 'Times New Roman', serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+  .cover-wrapper {
+    position: relative;
+    max-width: 550px;
+    width: 100%;
+    margin-bottom: 2rem;
+    cursor: pointer;
+  }
+  .cover-wrapper img {
+    width: 100%;
+    display: block;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.8);
+    transition: opacity 0.35s ease;
+  }
+  /* Arrow container — anchored to top-right of the cover */
+  .arrow-hint {
+    position: absolute;
+    top: -2.8rem;
+    right: -0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    pointer-events: none;
+    animation: pulse 1.4s ease-in-out infinite;
+  }
+  .arrow-hint span {
+    font-family: Georgia, serif;
+    font-size: 1rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #c8a96e;
+    margin-bottom: 0.5rem;
+  }
+  .arrow-hint svg {
+    width: 52px;
+    height: 68px;
+    transform: rotate(30deg);
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1;   transform: translateY(0); }
+    50%       { opacity: 0.4; transform: translateY(4px); }
+  }
+  h1 {
+    font-size: 1.1rem;
+    font-weight: normal;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #c8a96e;
+    margin-bottom: 0.75rem;
+    text-align: center;
+  }
+  p {
+    font-size: 0.95rem;
+    color: #888;
+    letter-spacing: 0.1em;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  a.buy {
+    display: inline-block;
+    border: 1px solid #c8a96e;
+    color: #c8a96e;
+    text-decoration: none;
+    padding: 0.6rem 1.8rem;
+    letter-spacing: 0.15em;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    transition: background 0.2s, color 0.2s;
+  }
+  a.buy:hover {
+    background: #c8a96e;
+    color: #0a0a0a;
+  }
+</style>
+</head>
+<body>
+
+  <div class="cover-wrapper" id="coverWrap">
+
+    <div class="arrow-hint">CLICK ME!</div>
+
+    <img id="coverImg" src="monstrous.jpg" alt="Monstrous by Harry Wylderose">
+  </div>
+
+  <h1>Harry Wylderose</h1>
+  <p>Available May 4th 2026</p>
+  <a class="buy" href="#">Order on Amazon</a>
+
+<script>
+  const img = document.getElementById('coverImg');
+  const front = 'monstrous.jpg';
+  const back  = 'monstrous_back.jpg';
+  let showingFront = true;
+
+  document.getElementById('coverWrap').addEventListener('click', () => {
+    img.style.opacity = '0';
+    setTimeout(() => {
+      showingFront = !showingFront;
+      img.src = showingFront ? front : back;
+      img.alt = showingFront ? 'Monstrous by Harry Wylderose – front cover'
+                             : 'Monstrous by Harry Wylderose – back cover';
+      img.style.opacity = '1';
+    }, 180);
+  });
+</script>
+
+</body>
+</html>
