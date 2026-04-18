@@ -1,3 +1,3 @@
-This is the first version of the Harry Wylderose website. Monstrous cover pre-launch and no-fn button.
-Cover turn and zoom, pause, scroll added.
+This is the lots-th version of the Harry Wylderose website, Monstrous cover pre-launch.
+Cover turn ontap.
 Music added.
