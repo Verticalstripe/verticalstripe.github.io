@@ -1,3 +1,3 @@
 This is the lots-th version of the Harry Wylderose website, Monstrous cover pre-launch.
-Cover turn ontap.
+Cover turn on tap.
 Music added.
